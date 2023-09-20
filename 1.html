@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/richtexteditor/rte_theme_default.css" />
+<script type="text/javascript" src="/richtexteditor/rte.js"></script>
+<script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script>
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="div_editor1"></div>
+
+    <script>
+        var editor1 = new RichTextEditor("#div_editor1");
+    
+        editor1.setHTMLCode("<p><b>Hello</b> World</p><p>Click the button below to show this HTML code</p>");
+    
+        function btngetHTMLCode() {
+            alert(editor1.getHTMLCode())
+        }
+    
+        function btnsetHTMLCode() {
+            editor1.setHTMLCode("<h1>editor1.setHTMLCode() sample</h1><p>You clicked the setHTMLCode button at " + new Date() + "</p>")
+        }
+        function btngetPlainText() {
+            alert(editor1.getPlainText())
+        }
+    
+    </script>
+    <div class="mt-4">
+        <button class="btn btn-sm btn-outline-primary btn-pill transition-3d-hover px-5" onclick="btngetHTMLCode();return false;">Get Html Code</button>
+        <button class="btn btn-sm btn-primary btn-pill transition-3d-hover px-5" onclick="btnsetHTMLCode();return false;">Set Html Code</button>
+        <button class="btn btn-sm btn-outline-info btn-pill transition-3d-hover px-5" onclick="btngetPlainText();return false;">Get Plain Text</button>
+    </div>
+</body>
+
+</html>
